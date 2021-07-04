@@ -53,19 +53,20 @@ class AuthorizationMiddleware
                 unset($postData);
             } else {
 
-                die(json_encode(['code'=>'401','message'=>'Token is missing. Please pass the token in request in the form of header, query parameter or post data field.']));
+               $this->returnError(["status"=> "ERROR",'code'=>'401','message'=>'Token is missing. Please pass the token in request in the form of header, query parameter or post data field.']);
             }
 
             try {
                 $payload = JWT::decode($token, Configure::read('CakeRestApi.jwt.key'), [Configure::read('CakeRestApi.jwt.algorithm')]);
+               
             } catch (\Exception $e) {
-                die(json_encode(['code'=>'401','message'=>'Invalid or empty token.']));
+               $this->returnError(["status"=> "ERROR",'code'=>'401','message'=>'Invalid or empty token.']);
 
             }
 
             if (empty($payload)) {
                 // throw new InvalidTokenException();
-                die(json_encode(['code'=>'401','message'=>'Invalid or empty token.']));
+               $this->returnError(["status"=> "ERROR",'code'=>'401','message'=>'Invalid or empty token.']);
 
             }
 
@@ -75,8 +76,16 @@ class AuthorizationMiddleware
             ];
 
             $request = $request->withAttribute('authorization', $authorizationAttr);
+
+            dd($request);
         }
 
         return $next($request, $response);
+    }
+
+    public function returnError($data = [])
+    {
+        header('Content-Type: application/json');
+        die(json_encode($data));
     }
 }

@@ -114,6 +114,10 @@ composer require firebase/php-jwt
 ```
 [more Info](https://github.com/firebase/php-jwt).
 
+
+
+
+
 This plugin also provides an option to authenticate request using JWT. Simply, just add one more parameter to your route configuration `requireAuthorization` like,
 
 ```php
@@ -162,15 +166,27 @@ By default, the plugin uses the predefined key and algorithm to generate JWT tok
 
 ```php
 <?php
+
 return [
-    'Rest' => [
+    'CakeRestApi' => [
         'jwt' => [
-            'key' => 'PUT YOUR KEY HERE', // it should contain alphanumeric string with symbols
+             'key' => 'PUT YOUR KEY HERE', // it should contain alphanumeric string with symbols
             'algorithm' => 'HS256' // See https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-40
-        ]
+        ],
+        'useApiAuth' => true,
     ]
+
 ];
+
 ```
+
+if you need to user auth functions ass this to `config/rest.php` 
+
+```php
+ 'useApiAuth' => true,
+```
+
+
 
 ### Access token data
 If there is a valid token available in the request, you can access it in your controller using the `token` and `payload` properties.

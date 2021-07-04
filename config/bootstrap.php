@@ -24,10 +24,10 @@ EventManager::instance()->on(
             new RestErrorMiddleware()
         );
 
-        $middlewareQueue->insertAfter(
-            'CakeRestApi\Middleware\RestErrorMiddleware',
-            new AuthorizationMiddleware()
-        );
+        // $middlewareQueue->insertAfter(
+        //     'CakeRestApi\Middleware\RestErrorMiddleware',
+        //     new AuthorizationMiddleware()
+        // );
 
       
     }
