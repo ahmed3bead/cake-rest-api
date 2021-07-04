@@ -1,31 +1,30 @@
 {
-    "name": "ahmedebead/cake-rest-Api",
+    "name": "ahmedebead/cake-rest-api",
     "description": "Rest API plugin for CakePHP 4",
     "type": "cakephp-plugin",
     "keywords": ["CakePHP", "Rest", "Api", "Rest Api", "CakePHP CakeRestApi", "CakePHP CakeRestApi Api"],
     "license": "MIT",
     "authors": [{
             "name": "Ahmed Ebead",
-            "homepage": "#",
+            "homepage": "https://github.com/ahmed3bead",
             "role": "Author"
         },
 
         {
             "name": "Community",
-            "homepage": "https://github.com/sprintcube/cakephp-rest/graphs/contributors"
+            "homepage": "https://github.com/ahmedebead/cake-rest-api/graphs/contributors"
         }
     ],
     "support": {
-        "source": "https://github.com/sprintcube/cakephp-rest",
-        "issues": "https://github.com/sprintcube/cakephp-rest/issues"
+        "source": "https://github.com/ahmedebead/cake-rest-api",
+        "issues": "https://github.com/ahmedebead/cake-rest-api/issues"
     },
     "require": {
-        "php": ">=5.6.0",
-        "cakephp/cakephp": "^3.4.0",
-        "firebase/php-jwt": "^5.0"
+        "php": ">=7.2.0",
+        "cakephp/cakephp": "^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7|^6.0",
+        "phpunit/phpunit": "^8.5 || ^9.3",
         "cakephp/cakephp-codesniffer": "^3.0"
     },
     "autoload": {

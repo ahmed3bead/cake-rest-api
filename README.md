@@ -26,7 +26,7 @@ Plugin::load('Rest', ['bootstrap' => true]);
 Or, you can load the plugin using the shell command
 
 ```sh
-$ bin/cake plugin load -b CakeRestApi
+$ bin/cake plugin load CakeRestApi
 ```
 
 ## Usage
@@ -109,11 +109,22 @@ In case of error or exception, the value of `status` will become NOK. Also, base
 The `result` key contains the actual response. It holds all the variables set from your controller. This key will not be available in case of error/exception.
 
 ## Require Authentication??
+
+You need to add firebase plugin into your CakePHP application using [composer](http://getcomposer.org).
+
+
+```php
+composer require firebase/php-jwt
+```
+[more Info](https://github.com/firebase/php-jwt).
+
 This plugin also provides an option to authenticate request using JWT. Simply, just add one more parameter to your route configuration `requireAuthorization` like,
 
 ```php
 $routes->connect('/foo/bar', ['controller' => 'Foo', 'action' => 'bar', 'isRest' => true, 'requireAuthorization' => true]);
 ```
+
+
 
 Now, the plugin will check for the JWT token in the request in form of a header, query parameter or post data. If you want to pass the token in the header, use the following format.
 

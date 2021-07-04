@@ -11,7 +11,7 @@ use Psr\Http\Message\ServerRequestInterface;
 /**
  * CakeRestApi middleware
  */
-class CakeRestApiErrorMiddleware extends ErrorHandlerMiddleware
+class RestErrorMiddleware extends ErrorHandlerMiddleware
 {
 
     /**
@@ -24,6 +24,8 @@ class CakeRestApiErrorMiddleware extends ErrorHandlerMiddleware
      */
     public function __invoke($request, $response, $next)
     {
+dd('dsd');
+        
         if (Configure::read('useRestErrorHandler')) {
             try {
                 $this->exceptionRenderer = \CakeRestApi\Error\RestExceptionRenderer::class;

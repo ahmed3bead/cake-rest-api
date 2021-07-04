@@ -52,17 +52,21 @@ class AuthorizationMiddleware
                 $token = $postData['token'];
                 unset($postData);
             } else {
-                throw new MissingTokenException();
+
+                die(json_encode(['code'=>'401','message'=>'Token is missing. Please pass the token in request in the form of header, query parameter or post data field.']));
             }
 
             try {
                 $payload = JWT::decode($token, Configure::read('CakeRestApi.jwt.key'), [Configure::read('CakeRestApi.jwt.algorithm')]);
             } catch (\Exception $e) {
-                throw new InvalidTokenException();
+                die(json_encode(['code'=>'401','message'=>'Invalid or empty token.']));
+
             }
 
             if (empty($payload)) {
-                throw new InvalidTokenException();
+                // throw new InvalidTokenException();
+                die(json_encode(['code'=>'401','message'=>'Invalid or empty token.']));
+
             }
 
             $authorizationAttr = [

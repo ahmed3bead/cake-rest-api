@@ -5,24 +5,31 @@ use CakeRestApi\Middleware\AuthorizationMiddleware;
 use CakeRestApi\Middleware\RestErrorMiddleware;
 use CakeRestApi\Middleware\RestMiddleware;
 
+
+
+
+
 EventManager::instance()->on(
     'Server.buildMiddleware',
     function ($event, $middlewareQueue) {
 
+
         $middlewareQueue->insertAfter(
             'Cake\Routing\Middleware\RoutingMiddleware',
-            new CakeRestApiMiddleware()
+            new RestMiddleware()
         );
 
         $middlewareQueue->insertAfter(
             'CakeRestApi\Middleware\RestMiddleware',
-            new CakeRestApiErrorMiddleware()
+            new RestErrorMiddleware()
         );
 
         $middlewareQueue->insertAfter(
             'CakeRestApi\Middleware\RestErrorMiddleware',
             new AuthorizationMiddleware()
         );
+
+      
     }
 );
 

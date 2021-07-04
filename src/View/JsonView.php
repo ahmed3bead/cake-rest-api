@@ -13,6 +13,8 @@ use Cake\View\View;
 class JsonView extends View
 {
 
+    public $hasRendered = null;
+
     /**
      * Renders api response
      *
@@ -21,15 +23,18 @@ class JsonView extends View
      * @return string|null Rendered content or null if content already rendered and returned earlier.
      * @throws Exception If there is an error in the view.
      */
-    public function render($view = null, $layout = null)
+    public function render($view = null, $layout = null): string
     {
+
+
+
         if ($this->hasRendered) {
             return null;
         }
 
         $this->response = $this->response->withType('json');
 
-        $this->layout = "Rest.rest";
+        $this->layout = "CakeRestApi.rest";
 
         $content = [
             'status' => 'OK'
@@ -42,6 +47,7 @@ class JsonView extends View
         }
 
         $content['result'] = $this->viewVars;
+
 
         $this->Blocks->set('content', $this->renderLayout(json_encode($content), $this->layout));
 

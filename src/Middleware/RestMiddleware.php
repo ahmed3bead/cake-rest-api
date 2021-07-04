@@ -9,7 +9,7 @@ use Psr\Http\Message\ServerRequestInterface;
 /**
  * CakeRestApi middleware
  */
-class CakeRestApiMiddleware
+class RestMiddleware
 {
 
     /**
