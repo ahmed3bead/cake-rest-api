@@ -1,11 +1,7 @@
 # CakeRestApi Plugin for CakePHP
 
-[![Build Status](https://travis-ci.org/sprintcube/cakephp-rest.svg?branch=master)](https://travis-ci.org/sprintcube/cakephp-rest)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/sprintcube/cakephp-rest/master/LICENSE)
-[![Total Downloads](https://poser.pugx.org/sprintcube/cakephp-rest/downloads)](https://packagist.org/packages/sprintcube/cakephp-rest)
-[![Latest Stable Version](https://poser.pugx.org/sprintcube/cakephp-rest/v/stable)](https://packagist.org/packages/sprintcube/cakephp-rest)
 
-This plugin simplifies the CakeRestApi API development for your CakePHP 3 application. It simply converts the output of your controller into a JSON response.
+This plugin simplifies the CakeRestApi API development for your CakePHP 4 application. It simply converts the output of your controller into a JSON response.
 
 ## Installation
 
