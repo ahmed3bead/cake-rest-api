@@ -10,7 +10,7 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 ```
-composer require sprintcube/cakephp-rest
+composer require ahmed3bead/cake-rest-api
 ```
 
 After installation, [Load the plugin](http://book.cakephp.org/3.0/en/plugins.html#loading-a-plugin)
@@ -104,108 +104,6 @@ In case of error or exception, the value of `status` will become NOK. Also, base
 
 The `result` key contains the actual response. It holds all the variables set from your controller. This key will not be available in case of error/exception.
 
-## Require Authentication??
-
-You need to add firebase plugin into your CakePHP application using [composer](http://getcomposer.org).
-
-
-```php
-composer require firebase/php-jwt
-```
-[more Info](https://github.com/firebase/php-jwt).
-
-
-
-
-
-This plugin also provides an option to authenticate request using JWT. Simply, just add one more parameter to your route configuration `requireAuthorization` like,
-
-```php
-$routes->connect('/foo/bar', ['controller' => 'Foo', 'action' => 'bar', 'isRest' => true, 'requireAuthorization' => true]);
-```
-
-
-
-Now, the plugin will check for the JWT token in the request in form of a header, query parameter or post data. If you want to pass the token in the header, use the following format.
-
-```
-Authorization: Bearer [token]
-```
-
-And for query parameter or post data, use `token` parameter and set the token as a value of the parameter.
-
-### Generate a token
-If you require the authentication in API, you first must grant the token to the user who is making the API request. In general, when a user logs in, the response should contain the token for all next requests.
-
-To generate a token, use the method from Utility class of the plugin: `JwtToken::generate()`.
-
-```php
-/**
- * login method
- *
- * @return Response|void
- */
-public function login()
-{
-    // you user authentication code will go here, you can compare the user with the database or whatever
-    
-    $payload = [
-        'id' => "Your User's ID",
-        'other' => "Some other data"
-    ];
-
-    $token = \CakeRestApi\Utility\JwtToken::generate($payload);
-
-    $this->set(compact('token'));
-}
-```
-
-And it will return the token in response. So, in next API calls, a user can use that token for authorization. You can add whatever data is required in your payload.
-
-By default, the plugin uses the predefined key and algorithm to generate JWT token. You can update this configuration by creating `config/rest.php` file. The content of this configuration file will be as following,
-
-```php
-<?php
-
-return [
-    'CakeRestApi' => [
-        'jwt' => [
-             'key' => 'PUT YOUR KEY HERE', // it should contain alphanumeric string with symbols
-            'algorithm' => 'HS256' // See https://tools.ietf.org/html/draft-ietf-jose-json-web-algorithms-40
-        ],
-        'useApiAuth' => true,
-    ]
-
-];
-
-```
-
-if you need to user auth functions ass this to `config/rest.php` 
-
-```php
- 'useApiAuth' => true,
-```
-
-
-
-### Access token data
-If there is a valid token available in the request, you can access it in your controller using the `token` and `payload` properties.
-
-```php
-/**
- * view method
- *
- * @return Response|void
- */
-public function view()
-{
-    $token = $this->token;
-
-    $payload = $this->payload;
-
-    // your action logic...
-}
-```
 These properties are also available in your controller's `beforeFilter` method, so you can put additional authentication logic there.
 
 ## Reporting Issues
