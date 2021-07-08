@@ -18,6 +18,10 @@ After installation, [Load the plugin](http://book.cakephp.org/4.0/en/plugins.htm
 
 Add this file to /src/Application.php
 ```php
+
+// src/Application.php
+
+
  public function bootstrap(): void
     {
         $this->addPlugin('CakeRestApi', ['bootstrap' => true]);
