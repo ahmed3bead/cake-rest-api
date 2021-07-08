@@ -10,7 +10,7 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 ```
-composer require ahmed3bead/cake-rest-api
+composer require ahmed3bead/cake-rest-api "^0.1"
 ```
 
 After installation, [Load the plugin](http://book.cakephp.org/4.0/en/plugins.html#loading-a-plugin)
