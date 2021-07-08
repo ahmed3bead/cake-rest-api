@@ -1,6 +1,6 @@
 {
     "name": "ahmedebead/cake-rest-api",
-    "description": "Rest API plugin for CakePHP 4",
+    "description": "Rest API plugin for CakePHP 4.x",
     "type": "cakephp-plugin",
     "keywords": ["CakePHP", "Rest", "Api", "Rest Api", "CakePHP CakeRestApi", "CakePHP CakeRestApi Api"],
     "license": "MIT",

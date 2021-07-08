@@ -1,7 +1,7 @@
 # CakeRestApi Plugin for CakePHP
 
 
-This plugin simplifies the CakeRestApi API development for your CakePHP 4.2.0 application. It simply converts the output of your controller into a JSON response.
+This plugin simplifies the CakeRestApi API development for your CakePHP 4.x application. It simply converts the output of your controller into a JSON response.
 
 ## Installation
 
