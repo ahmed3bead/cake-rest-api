@@ -1,7 +1,7 @@
 # CakeRestApi Plugin for CakePHP
 
 
-This plugin simplifies the CakeRestApi API development for your CakePHP 4 application. It simply converts the output of your controller into a JSON response.
+This plugin simplifies the CakeRestApi API development for your CakePHP 4.2.0 application. It simply converts the output of your controller into a JSON response.
 
 ## Installation
 
@@ -13,7 +13,7 @@ The recommended way to install composer packages is:
 composer require ahmed3bead/cake-rest-api
 ```
 
-After installation, [Load the plugin](http://book.cakephp.org/3.0/en/plugins.html#loading-a-plugin)
+After installation, [Load the plugin](http://book.cakephp.org/4.0/en/plugins.html#loading-a-plugin)
 
 ```php
 Plugin::load('Rest', ['bootstrap' => true]);
@@ -107,4 +107,4 @@ The `result` key contains the actual response. It holds all the variables set fr
 These properties are also available in your controller's `beforeFilter` method, so you can put additional authentication logic there.
 
 ## Reporting Issues
-If you have a problem with this plugin or found any bug, please open an issue on [GitHub](https://github.com/sprintcube/cakephp-rest/issues).
+If you have a problem with this plugin or found any bug, please open an issue on [GitHub](https://github.com/ahmed3bead/cake-rest-api/issues).
