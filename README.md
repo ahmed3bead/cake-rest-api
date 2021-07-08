@@ -15,8 +15,16 @@ composer require ahmedebead/cake-rest-api "^0.1"
 
 After installation, [Load the plugin](http://book.cakephp.org/4.0/en/plugins.html#loading-a-plugin)
 
+
+Add this file to /src/Application.php
 ```php
-Plugin::load('Rest', ['bootstrap' => true]);
+ public function bootstrap(): void
+    {
+        $this->addPlugin('CakeRestApi', ['bootstrap' => true]);
+        
+        // Other code
+    }
+
 ```
 
 Or, you can load the plugin using the shell command
