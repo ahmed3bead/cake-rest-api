@@ -1,5 +1,5 @@
 # CakeRestApi Plugin for CakePHP
-
+[![Latest Stable Version](http://poser.pugx.org/ahmedebead/cake-rest-api/v)](https://packagist.org/packages/ahmedebead/cake-rest-api) [![Total Downloads](http://poser.pugx.org/ahmedebead/cake-rest-api/downloads)](https://packagist.org/packages/ahmedebead/cake-rest-api) [![Latest Unstable Version](http://poser.pugx.org/ahmedebead/cake-rest-api/v/unstable)](https://packagist.org/packages/ahmedebead/cake-rest-api) [![License](http://poser.pugx.org/ahmedebead/cake-rest-api/license)](https://packagist.org/packages/ahmedebead/cake-rest-api)
 
 This plugin simplifies the CakeRestApi API development for your CakePHP 4.x application. It simply converts the output of your controller into a JSON response.
 
